@@ -16,6 +16,10 @@ public:
 private:
 	
 	int id;
+	std::string name;
+	std::string author;
+	int prince;
+	int quantity;
 	
 	
 	

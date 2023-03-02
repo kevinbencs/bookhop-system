@@ -14,6 +14,13 @@ class Employees
 private:
 	
 	int id;
+	std::string country;
+	std::string city;
+	std::string address1;
+	int salary;
+	std::string joining_date;
+	std::string position;
+	
 };
 
 #endif
