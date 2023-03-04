@@ -9,6 +9,16 @@ class Orders
 	
 	~Orders();
 	
+	add(MYSQL* book_shop);
+	
+	change(MYSQL* book_shop);
+	
+	remove_order(MYSQL* book_shop);
+	
+	get(MYSQL* book_shop);
+	
+	get_all()MYSQL* book_shop;
+	
 	
 private:
 	

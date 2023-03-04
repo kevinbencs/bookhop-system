@@ -10,6 +10,12 @@ class Employees
 	
 	~Employees();
 	
+	add(MYSQL* book_shop);
+	
+	change(MYSQL* book_shop);
+	
+	remove_employee(MYSQL* book_shop);
+	
 	
 private:
 	

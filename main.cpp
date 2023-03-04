@@ -8,11 +8,11 @@
 #include "Orders.h"
 
 
-void book();
+void books(MYSQL* book_shop);
 
-void employees();
+void employees(MYSQL* book_shop);
 
-void orders();
+void orders(MYSQL* book_shop);
 
 int main()
 {
@@ -69,16 +69,16 @@ int main()
 					break;
 					
 					case 1:
-					book();
+					books(book_shop);
 					break;
 					
 					
 					case 2:
-					employees();
+					employees(book_shop);
 					break;
 					
 					case 3:
-					orders();
+					orders(book_shop);
 					break;
 					
 					default:
@@ -104,7 +104,7 @@ int main()
 
 
 
-void book()
+void books(MYSQL* book_shop)
 {
 	int number;
 	Book first;
@@ -131,17 +131,17 @@ void book()
 			break;
 			
 			case 1:
-			first.set();
+			first.add(book_shop);
 			FunctionIsOpened=false;
 			break;
 			
 			case 2:
-			first.change()
+			first.change(book_shop)
 			FunctionIsOpened=false;
 			break;
 			
 			case 3:
-			first.remove();
+			first.remove_book(book_shop);
 			FunctionIsOpened=false;
 			break;
 			
@@ -154,12 +154,10 @@ void book()
 	}
 	
 	
-	
-	
 }
 
 
-void employees()
+void employees(MYSQL* book_shop)
 {
 	int number;
 	Employees first;
@@ -186,17 +184,17 @@ void employees()
 			break;
 			
 			case 1:
-			first.set();
+			first.add(book_shop);
 			FunctionIsOpened=false;
 			break;
 			
 			case 2:
-			first.change()
+			first.change(book_shop)
 			FunctionIsOpened=false;
 			break;
 			
 			case 3:
-			first.remove();
+			first.remove_employee(book_shop);
 			FunctionIsOpened=false;
 			break;
 			
@@ -209,10 +207,9 @@ void employees()
 	}
 	
 	
-	
 }
 
-void orders()
+void orders(MYSQL* book_shop)
 {
 	int number;
 	Employees first;
@@ -241,27 +238,27 @@ void orders()
 			break;
 			
 			case 1:
-			first.set();
+			first.add(book_shop);
 			FunctionIsOpened=false;
 			break;
 			
 			case 2:
-			first.change()
+			first.change(book_shop)
 			FunctionIsOpened=false;
 			break;
 			
 			case 3:
-			first.remove();
+			first.remove_order(book_shop);
 			FunctionIsOpened=false;
 			break;
 			
 			case 4:
-			first.get();
+			first.get(book_shop);
 			FunctionIsOpened=false;
 			break;
 			
 			case 5:
-			first.get_all();
+			first.get_all(book_shop);
 			FunctionIsOpened=false;
 			break;
 			
@@ -272,11 +269,6 @@ void orders()
 		
 		
 	}
-	
-
-	
-	
-	
 	
 	
 }

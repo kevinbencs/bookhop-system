@@ -4,13 +4,19 @@
 #ifndef BOOK_H
 #define BOOK_H
 
-class Bbook
+class Book
 {
 public:
 	
 	Book();
 	
 	~Book();
+	
+	add(MYSQL* book_shop);
+	
+	change(MYSQL* book_shop);
+	
+	remove_book(MYSQL* book_shop);
 	
 	
 private:
