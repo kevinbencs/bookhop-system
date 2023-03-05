@@ -12,6 +12,8 @@ public:
 	
 	~Book();
 	
+	set(MYSQL* book_shop);
+	
 	add(MYSQL* book_shop);
 	
 	change(MYSQL* book_shop);

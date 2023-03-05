@@ -16,11 +16,12 @@ void orders(MYSQL* book_shop);
 
 int main()
 {
-	MYSQL* book_shop;
+	MYSQL* book_shop
+
 	
 	std::string user_name;
 	std::string password;
-	int number;
+	int choice;
 	bool ProgramIsOpened=true;
 	
 	
@@ -58,11 +59,11 @@ int main()
 				std::cout<<"3: alkalmazottak"<<std::endl;
 				std::cout<<"0: kilepes"<<std::endl;
 				std::cout<<"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"<<std::endl;
-				cin>>number;
+				cin>>choice;
 				system("cls");
 				
 				
-				switch (number)
+				switch (choice)
 				{
 					case 0:
 					ProgramIsOpened=false;
@@ -106,7 +107,7 @@ int main()
 
 void books(MYSQL* book_shop)
 {
-	int number;
+	int choice;
 	Book first;
 	bool FunctionIsOpened=true;
 	
@@ -121,10 +122,10 @@ void books(MYSQL* book_shop)
 		std::cout<<"0: vissza"<<std::endl;
 		std::cout<<"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"<<std::endl;
 		
-		cin>>number;
+		cin>>choice;
 		system("cls");
 		
-		switch (number)
+		switch (choice)
 		{
 			case 0:
 			FunctionIsOpened=false;
@@ -159,7 +160,7 @@ void books(MYSQL* book_shop)
 
 void employees(MYSQL* book_shop)
 {
-	int number;
+	int choice;
 	Employees first;
 	bool FunctionIsOpened=true;
 	
@@ -174,10 +175,10 @@ void employees(MYSQL* book_shop)
 		std::cout<<"0: vissza"<<std::endl;
 		std::cout<<"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"<<std::endl;
 	
-		cin>>number;
+		cin>>choice;
 		system("cls");
 		
-		switch (number)
+		switch (choice)
 		{
 			case 0:
 			FunctionIsOpened=false;
@@ -211,7 +212,7 @@ void employees(MYSQL* book_shop)
 
 void orders(MYSQL* book_shop)
 {
-	int number;
+	int choice;
 	Employees first;
 	bool FunctionIsOpened=true;
 	
@@ -228,10 +229,10 @@ void orders(MYSQL* book_shop)
 		std::cout<<"0: vissza"<<std::endl;
 		std::cout<<"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"<<std::endl;
 	
-		cin>>number;
+		cin>>choice;
 		system("cls");
 		
-		switch (number)
+		switch (choice)
 		{
 			case 0:
 			FunctionIsOpened=false;
