@@ -17,7 +17,6 @@ class Orders
 	
 	get(MYSQL* book_shop);
 	
-	get_all()MYSQL* book_shop;
 	
 	
 private:

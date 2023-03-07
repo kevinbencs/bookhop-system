@@ -7,6 +7,10 @@
 #include "Employees.h"
 #include "Orders.h"
 
+HOST="localhost";
+NAME="root";
+PASS="WaTHjid1";
+
 
 void books(MYSQL* book_shop);
 
@@ -19,21 +23,8 @@ int main()
 	MYSQL* book_shop
 
 	
-	std::string user_name;
-	std::string password;
 	int choice;
 	bool ProgramIsOpened=true;
-	
-	
-	std::cout<<"Log in:"<<std::endl;
-	std::cout<<std::endl;
-	std::cout<<"User name: ";
-	getline(std::cin,user_name);
-	std::cout<<std::endl;
-	std::cout<<"Password: ";
-	std::cin>>password;
-	system("cls");
-	
 	
 	if (!(book_shop=mysql_init(NULL)))
 	{
@@ -41,7 +32,7 @@ int main()
 	}
 	else
 	{
-		if (!mysql_real_connect(book_shop,"localhost", user_name, password,"bookshop", 3306, NULL,0))
+		if (!mysql_real_connect(book_shop, HOST, NAME, PASS,"bookshop", 3306, NULL,0))
 		{
 			std::cout<<"Failde to connected to MYSQL database"<<std::endl;
 			std::cout<<mysql_error(book_shop)<<std::endl;
@@ -119,6 +110,7 @@ void books(MYSQL* book_shop)
 		std::cout<<"1: uj konyv bevitele"<<std::endl;
 		std::cout<<"2: konyv adatainak megvaltoztatasa"<<std::endl;
 		std::cout<<"3: konyv torlese"<<std::endl;
+		std::cout<<"4: konyv adatainak megjelenitese"<<std::endl;
 		std::cout<<"0: vissza"<<std::endl;
 		std::cout<<"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"<<std::endl;
 		
@@ -146,6 +138,11 @@ void books(MYSQL* book_shop)
 			FunctionIsOpened=false;
 			break;
 			
+			case 4:
+			first.get(book_shop);
+			FunctionIsOpened=false;
+			break;
+			
 			default:
 			std::cout<<"Rossz számot adott meg."<<std::endl;
 			std::cout<<std::endl;
@@ -158,7 +155,7 @@ void books(MYSQL* book_shop)
 }
 
 
-void employees(MYSQL* book_shop)
+void orders(MYSQL* book_shop)
 {
 	int choice;
 	Employees first;
@@ -210,7 +207,7 @@ void employees(MYSQL* book_shop)
 	
 }
 
-void orders(MYSQL* book_shop)
+void employees(MYSQL* book_shop)
 {
 	int choice;
 	Employees first;

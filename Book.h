@@ -12,13 +12,13 @@ public:
 	
 	~Book();
 	
-	set(MYSQL* book_shop);
+	void get(MYSQL* book_shop);
 	
-	add(MYSQL* book_shop);
+	void add(MYSQL* book_shop);
 	
-	change(MYSQL* book_shop);
+	void change(MYSQL* book_shop);
 	
-	remove_book(MYSQL* book_shop);
+	void remove_book(MYSQL* book_shop);
 	
 	
 private:

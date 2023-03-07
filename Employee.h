@@ -16,6 +16,10 @@ class Employees
 	
 	remove_employee(MYSQL* book_shop);
 	
+	get(MYSQL* book_shop);
+	
+	get_all(MYSQL* book_shop);
+	
 	
 private:
 	
