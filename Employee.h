@@ -10,23 +10,24 @@ class Employees
 	
 	~Employees();
 	
-	add(MYSQL* book_shop);
+	void add(MYSQL* book_shop);
 	
-	change(MYSQL* book_shop);
+	void change(MYSQL* book_shop);
 	
-	remove_employee(MYSQL* book_shop);
+	void remove_employee(MYSQL* book_shop);
 	
-	get(MYSQL* book_shop);
+	void get(MYSQL* book_shop);
 	
-	get_all(MYSQL* book_shop);
+	void get_all(MYSQL* book_shop);
 	
 	
 private:
 	
 	int id;
+	std::string name;
 	std::string country;
 	std::string city;
-	std::string address1;
+	std::string address;
 	int salary;
 	std::string joining_date;
 	std::string position;

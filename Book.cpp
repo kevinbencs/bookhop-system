@@ -9,6 +9,8 @@
 
 void get_helper(MYSQL* book_shop,int &id)
 {
+	MYSQL_RES *res_set;
+	MYSQL_ROW row;
 	std::stringstream stmt;
 	std::string query;
 	const char* q;
@@ -288,7 +290,7 @@ void Book::add(MYSQL* book_shop)
 	const char* q;
 	
 	
-	std::cout<<"Add meg az adatokat"<<std::endl;
+	std::cout<<"Adja meg az adatokat"<<std::endl;
 	std::cout<<"Nev";
 	getline(std::cin,name);
 	std::cout<<std::endl;
@@ -327,7 +329,7 @@ void Book::change(MYSQL* book_shop)
 	std::cout<<"Melyik konyv adatait akarja megvaltoztatni?"<<std::endl;
 	std::cout<<std::endl;
 	std::cout<<"1: id megadasa."<<std::endl;
-	std::cout<<"2: kereses nev alapjan."<<std::endl;
+	std::cout<<"2: kereses cim alapjan."<<std::endl;
 	std::cout<<"0: vissza."<<std::endl;
 	cin>>choice;
 	system("cls");
@@ -345,7 +347,7 @@ void Book::change(MYSQL* book_shop)
 			break;
 			
 			case 2:
-			std::cout<<"Adja meg a nevet."<<std::endl;
+			std::cout<<"Adja meg a cimet."<<std::endl;
 			getline(std::cin,name);
 			system("cls");
 			search(MYSQL* book_shop, std::string name)
@@ -375,7 +377,7 @@ void Book::remove_book(MYSQL* book_shop)
 	std::cout<<"Melyik konyvet akarja kitorolni az adatbazisbol?"<<std::endl;
 	std::cout<<std::endl;
 	std::cout<<"1: id megadása"<<std::endl;
-	std::cout<<"2: kereses nev alapjan."<<std::endl;
+	std::cout<<"2: kereses cim alapjan."<<std::endl;
 	std::cout<<"0: vissza."<<std::endl;
 	cin>>choice;
 	

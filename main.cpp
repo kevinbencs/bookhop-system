@@ -12,6 +12,8 @@ NAME="root";
 PASS="WaTHjid1";
 
 
+FUNCTIONISOPENED-ET BE KELL RAKNI A FUGGVENYEKBE
+
 void books(MYSQL* book_shop);
 
 void employees(MYSQL* book_shop);

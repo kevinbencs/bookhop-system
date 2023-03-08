@@ -3,6 +3,7 @@
 #include <mysql.h>
 #include <mysqld_error.h>
 #include <sstream>
+#include "Book.h"
 
 
 
@@ -281,7 +282,12 @@ Book::Book()
 }
 
 
-void Book::add(MYSQL* book_shop)
+Orders::Orders
+{
+
+}
+
+Orders::add(MYSQL* book_shop)
 {
 	std::stringstream stmt;
 	std::string query;
@@ -317,9 +323,10 @@ void Book::add(MYSQL* book_shop)
 	mysql_store_result(book_shop);
 	
 	
+	
 }
-
-void Book::change(MYSQL* book_shop)
+	
+Orders::change(MYSQL* book_shop)
 {
 	int choice;
 	bool FunctionIsOpened=true;
@@ -364,10 +371,12 @@ void Book::change(MYSQL* book_shop)
 		}
 	}
 	
+	
+	
+	
 }
-
-
-void Book::remove_book(MYSQL* book_shop)
+	
+Orders::remove_order(MYSQL* book_shop)
 {
 	int choice;
 	bool FunctionIsOpened=true;
@@ -412,9 +421,10 @@ void Book::remove_book(MYSQL* book_shop)
 		}
 	}
 	
+	
 }
-
-void Book::get(MYSQL* book_shop)
+	
+Orders::get(MYSQL* book_shop)
 {
 	int choice,number;
 	bool FunctionIsOpened=true;
@@ -455,46 +465,6 @@ void Book::get(MYSQL* book_shop)
 			std::cout<<"Nem jo szamot adott meg."<<std::endl;
 		}
 	}
-	
-}
-
-
-
-Book::~Book()
-{
-	
-}
-
-
-
-
-Orders::Orders
-{
-
-}
-
-Orders::add(MYSQL* book_shop)
-{
-	
-	
-}
-	
-Orders::change(MYSQL* book_shop)
-{
-	
-	
-	
-	
-}
-	
-Orders::remove_order(MYSQL* book_shop)
-{
-	
-	
-}
-	
-Orders::get(MYSQL* book_shop)
-{
 	
 	
 }
