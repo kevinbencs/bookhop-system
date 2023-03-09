@@ -277,9 +277,43 @@ int search(MYSQL* book_shop, std::string &name)
 
 
 
-Book::Book()
+Book::Book(MYSQL* book_shop,int book_id,bool &FunctionIsOpened)
 {
+	MYSQL_RES *res_set;
+	MYSQL_ROW row;
+	std::stringstream stmt;
+	std::string query;
+	const char* q;
 	
+	stmt<<"SELECT * FROM book WHERE id="<<book_id;
+	query=stmt.str();
+	q=query.c_str();
+	
+	if (mysql_ping(book_shop))
+	{
+		std::cout<<"Error, imposeble to connet"<<std::endl;
+		std::cout<<mysql_error(book_shop)<<std::endl;
+	}
+	
+	mysql_query(book_shop,q);
+	
+	
+	res_set=mysql_store_result(book_shop);
+	
+	if((row = mysql_fetch_row(res_set)) == NULL)
+    {
+		std::cout << "Nincs talalat a konyv ID-re" << std::endl;
+		std::cout << std::endl;
+	}
+	else
+	{
+		id = row[0];
+        name = row[1];
+		author = row[2];
+        price = row[3];
+		quantity = row[4];
+		FunctionIsOpened=false;
+	}
 }
 
 
@@ -458,6 +492,16 @@ void Book::get(MYSQL* book_shop)
 		}
 	}
 	
+}
+
+int Book::get_price()
+{
+	return price;
+}
+	
+int Book::get_quantity()
+{
+	return quantity;
 }
 
 

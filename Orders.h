@@ -29,5 +29,6 @@ private:
 	std::string address1;
 	int quantity;
 	std::string dt_ordered;
+	int price;
 	
 };

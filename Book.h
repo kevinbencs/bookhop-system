@@ -8,7 +8,7 @@ class Book
 {
 public:
 	
-	Book();
+	Book(MYSQL* book_shop,int book_id,bool &FunctionIsOpened);
 	
 	~Book();
 	
@@ -20,13 +20,16 @@ public:
 	
 	void remove_book(MYSQL* book_shop);
 	
+	int get_price();
+	
+	int get_quantity();
 	
 private:
 	
 	int id;
 	std::string name;
 	std::string author;
-	int prince;
+	int price;
 	int quantity;
 	
 	
