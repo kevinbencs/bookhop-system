@@ -1,32 +1,35 @@
+#ifndef BOOK_H
+#define BOOK_H
+
 #include <string>
 #include <mysql.h>
 
-#ifndef BOOK_H
-#define BOOK_H
+
 
 class Book
 {
 public:
 	
-	Book(MYSQL* book_shop,int book_id,bool &FunctionIsOpened);
+	
+	Book();
 	
 	~Book();
 	
-	void get(MYSQL* book_shop);
+	void add(MYSQL* ,bool &); //give data of new book
 	
-	void add(MYSQL* book_shop);
+	void change(MYSQL* ,bool &); //update book details
 	
-	void change(MYSQL* book_shop);
+	void remove(MYSQL* ,bool &); //remove one book from database
 	
-	void remove_book(MYSQL* book_shop);
+	void get(MYSQL*,bool &); //display data of one book
 	
-	int get_price();
+	void all_get(MYSQL* ,bool &); //display data of all books
 	
-	int get_quantity();
+	
 	
 private:
 	
-	int id;
+	int id; // Primary key
 	std::string name;
 	std::string author;
 	int price;

@@ -1,34 +1,44 @@
+#ifndef ORDERS_H
+#define ORDERS_H
+
 #include <string>
 #include <mysql.h>
 
-#pragma once
+
+
 
 class Orders
 {
+public:
+		
 	Orders();
 	
 	~Orders();
 	
-	void add(MYSQL* book_shop);
+	void add(MYSQL* ,bool &); //give data of new order
 	
-	void change(MYSQL* book_shop);
+	void change(MYSQL* ,bool &); //update order details
 	
-	void remove_order(MYSQL* book_shop);
+	void remove(MYSQL* ,bool &); //remove one order from database
 	
-	void get(MYSQL* book_shop);
+	void get(MYSQL* ,bool &); //display data of one order
+	
+	void all_get(MYSQL* ,bool &); //display data of one orders
 	
 	
 	
 private:
 	
-	int id;
-	int book_id;
+	int id; // Primary key
+	int book_id; // Primary key of book
 	std::string customer;
 	std::string country;
 	std::string city;
-	std::string address1;
+	std::string address;
 	int quantity;
 	std::string dt_ordered;
 	int price;
 	
 };
+
+#endif

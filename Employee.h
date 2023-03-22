@@ -1,29 +1,33 @@
-#include <string>
-#include <mysql.h>
-
 #ifndef EMPLOYEES_H
 #define EMPLOYEES_H
 
+#include <string>
+#include <mysql.h>
+
+
+
 class Employees
 {
+public:
+	
 	Employees();
 	
 	~Employees();
 	
-	void add(MYSQL* book_shop);
+	void add(MYSQL* ,bool &); //give data of new employee
 	
-	void change(MYSQL* book_shop);
+	void change(MYSQL* ,bool &); //update employee details
 	
-	void remove_employee(MYSQL* book_shop);
+	void remove(MYSQL* ,bool &); //remove one employee from database
 	
-	void get(MYSQL* book_shop);
+	void get(MYSQL* ,bool &); //display data of one employee
 	
-	void get_all(MYSQL* book_shop);
+	void all_get(MYSQL* ,bool &); //display data of all employees
 	
 	
 private:
 	
-	int id;
+	int id; // Primary key
 	std::string name;
 	std::string country;
 	std::string city;
