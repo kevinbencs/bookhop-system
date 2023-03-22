@@ -1,10 +1,10 @@
 Könyvesbolt menedzsment rendszer
 
-A fentebb látható kód egy könyvesbolt menedzsment rendszer felépítését mutatja, ami tartalmazza az alkalmazottakat, a könyveket és a leadott rendeléseket. Az alkalmazásban le tudjuk kérdezni az elöző három adatait, meg tudjuk változtatni azokat, valamint törlöni tudjuk őket az adatbázisból és újak adait is meg tudjuk adni. Az információk a következők:
+A fentebb látható kód egy könyvesbolt menedzsment rendszer felépítését mutatja, ami tartalmazza az alkalmazottakat, a könyveket és a leadott rendeléseket. Az alkalmazásban le tudjuk kérdezni az előző három adatait, meg tudjuk változtatni azokat, valamint törölni tudjuk őket az adatbázisból és újak adatait is meg tudjuk adni. Az információk a következők:
 
 Könyvek: azonosító, cím, szerző, darabszám, ár.
 
-Rendelés: azonosító, könyv azonosítója,rendelő neve, címe, megrendelt könyv darabszáma, rendelés ára.
+Rendelés: azonosító, könyv azonosítója, rendelő neve, címe, megrendelt könyv darabszáma, rendelés ára.
 
 Alkalmazottak: azonosító, név, cím, fizetés, pozíció.
 
